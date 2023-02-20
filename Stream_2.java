@@ -1,6 +1,7 @@
 package HW;
 
 import java.util.List;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Stream_2 {
@@ -21,6 +22,13 @@ public class Stream_2 {
         System.out.println(s.findFirst().get());
         s = names.stream();
         System.out.println(s.count());
+
+        Stream<Integer> si = ages.stream();
+        System.out.println(si.reduce(0, (a, b) -> a + b));
+        si = ages.stream();
+        System.out.println(si.max(Integer::compareTo).get());
+        IntStream is = ages.stream().mapToInt(a -> a.intValue());
+        System.out.println(is.average().getAsDouble());
     }
 }
 
