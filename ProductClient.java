@@ -1,7 +1,7 @@
 package HW;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+//import org.json.JSONArray;
+//import org.json.JSONObject;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -35,28 +35,28 @@ public class ProductClient {
             System.out.println("---------------------------------------------------------------");
 
             //상품 목록 요청하기
-            JSONObject request = new JSONObject();
-            request.put("menu", 0);
-            request.put("data", new JSONObject());
-            dos.writeUTF(request.toString());
-            dos.flush();
+//            JSONObject request = new JSONObject();
+//            request.put("menu", 0);
+//            request.put("data", new JSONObject());
+//            dos.writeUTF(request.toString());
+//            dos.flush();
 
             //응답 받기
-            JSONObject response = new JSONObject(dis.readUTF());
-            if(response.getString("status").equals("success")) {
-                //상품 목록 출력
-                JSONArray data = response.getJSONArray("data");
-                for(int i=0; i<data.length(); i++) {
-                    JSONObject product = data.getJSONObject(i);
-                    System.out.printf(
-                            "%-6d%-30s%-15d%-10d\n",
-                            product.getInt("no"),
-                            product.getString("name"),
-                            product.getInt("price"),
-                            product.getInt("stock")
-                    );
-                }
-            }
+//            JSONObject response = new JSONObject(dis.readUTF());
+//            if(response.getString("status").equals("success")) {
+//                //상품 목록 출력
+//                JSONArray data = response.getJSONArray("data");
+//                for(int i=0; i<data.length(); i++) {
+//                    JSONObject product = data.getJSONObject(i);
+//                    System.out.printf(
+//                            "%-6d%-30s%-15d%-10d\n",
+//                            product.getInt("no"),
+//                            product.getString("name"),
+//                            product.getInt("price"),
+//                            product.getInt("stock")
+//                    );
+//                }
+//            }
 
             System.out.println();
             System.out.println("---------------------------------------------------------------");
@@ -65,12 +65,12 @@ public class ProductClient {
             String menu_number = scanner.nextLine();
             System.out.println();
 
-            switch(menu_number) {
-                case "1" -> create();
-                case "2" -> update();
-                case "3" -> delete();
-                case "4" -> exit();
-            }
+//            switch(menu_number) {
+//                case "1" -> create();
+//                case "2" -> update();
+//                case "3" -> delete();
+//                case "4" -> exit();
+//            }
 
 
         } catch (IOException e) {
